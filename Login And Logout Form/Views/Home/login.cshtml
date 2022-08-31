@@ -1,0 +1,24 @@
+﻿@model Login_And_Logout_Form.Models.Loginclass
+@{
+    ViewBag.Title = "login";
+}
+<h2>login</h2>
+@using (Html.BeginForm("login", "Home", FormMethod.Post)) { 
+
+<div class="form-group">
+    <label>UserEmail</label>
+    @Html.TextBoxFor(a => a.UserEmail, new { @class ="form-control", @placeholder = "Email"})
+@Html.ValidationMessageFor(a => a.UserEmail, "", new {@class="st"})
+
+</div>
+
+<div class="form-group">
+    <label>UserPassword</label>
+    @Html.PasswordFor(a => a.UserPassword, new { @class = "form-control", @placeholder = "Password" })
+    @Html.ValidationMessageFor(a => a.UserPassword, "", new { @class = "st" })
+
+</div>
+<button type="submit" class="btn btn-success">login</button>
+
+}
+
